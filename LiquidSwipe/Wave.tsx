@@ -10,7 +10,7 @@ const { width, height } = Dimensions.get("window");
 const AnimatedPath = Animated.createAnimatedComponent(Path);
 const { sub, add, multiply, concat } = Animated;
 
-interface WeaveProps {
+interface WaveProps {
   centerY: Animated.Node<number>;
   horRadius: Animated.Node<number>;
   vertRadius: Animated.Node<number>;
@@ -24,7 +24,7 @@ export default ({
   vertRadius,
   sideWidth,
   children,
-}: WeaveProps) => {
+}: WaveProps) => {
   const curveStartY = add(centerY, vertRadius);
   const maskWidth = sub(width, sideWidth);
   const commands: Animated.Node<string>[] = [];

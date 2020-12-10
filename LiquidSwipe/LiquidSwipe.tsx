@@ -9,9 +9,7 @@ import Animated, {
 } from "react-native-reanimated";
 import { PanGestureHandler, State } from "react-native-gesture-handler";
 import { onGestureEvent, snapPoint } from "react-native-redash/lib/module/v1";
-
-
-import Weave from "./Weave";
+import Wave from "./Wave";
 import { followPointer, snapProgress } from "./AnimationHelpers";
 import {
   initialSideWidth,
@@ -20,7 +18,7 @@ import {
   waveHorRadius,
   waveHorRadiusBack,
   waveVertRadius,
-} from "./WeaveHelpers";
+} from "./WaveHelpers";
 import Content from "./Content";
 import Button from "./Button";
 
@@ -93,7 +91,7 @@ export default () => {
       />
       <PanGestureHandler {...gestureHandler}>
         <Animated.View style={StyleSheet.absoluteFill}>
-          <Weave sideWidth={sWidth} {...{ centerY, horRadius, vertRadius }}>
+          <Wave sideWidth={sWidth} {...{ centerY, horRadius, vertRadius }}>
             <Content
               backgroundColor="#4d1168"
               source={assets[1]}
@@ -101,7 +99,7 @@ export default () => {
               title2="Gamers"
               color="#fd5587"
             />
-          </Weave>
+          </Wave>
           <Button y={centerY} {...{ progress }} />
         </Animated.View>
       </PanGestureHandler>
